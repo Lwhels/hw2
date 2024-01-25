@@ -1,0 +1,116 @@
+\documentclass[11pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,amsfonts,mathtools}
+\usepackage{titling, float, parskip, blkarray, multirow}
+\usepackage[margin=1in, lmargin=0.5in]{geometry}
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0in}
+\usepackage[math]{cellspace}
+\cellspacetoplimit 3pt
+\cellspacebottomlimit 3pt
+\setlength{\arraycolsep}{4pt}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tikz}
+\usepackage{matlab-prettifier}
+\setlength{\droptitle}{-6em}
+\pretitle{\flushleft\Large\bfseries} 
+\posttitle{}
+\preauthor{\flushleft\Large}
+\postauthor{}
+\predate{}
+\postdate{\vspace{-0.3em}}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem*{claim*}{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{definition}\newtheorem*{definition*}{Definition}
+\let\bar\overbar
+\let\0\varnothing 
+\let\phi\varphi
+\let\tilde\widetilde
+\def\Q{\mathbb{Q}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
+\def\hw{2}
+\title{Math 151a, Homework \hw}
+\author{Lucas Wheeler}
+\date{}
+\begin{document}
+\maketitle
+\begin{questions}
+\question 1.3.5
+For this question we compute the approximation of arctan at the values specified, and calculate $\pi/4$ at those points to approximate $\pi$.
+\begin{lstlisting}[style=Matlab-editor]
+function [N] = arctanapprox(TOL, M)
+    N = 1;
+    sum = 0;
+    sign = -1;
+    while N <= M
+        sign = -sign;
+        term = sign* (4*(((1/5)^(2*N - 1))/ (2*N - 1)) - (((1/239)^(2*N - 1))/ (2*N - 1)));
+        sum = vpa(sum + term);
+        if abs(vpa(pi) - sum*4) < TOL
+            return
+        end
+        N = N + 1;
+    end
+    N = Inf;
+end
+
+    \end{lstlisting}
+The code above with a tolerance of $10^-4$ as to have $\pi$ accurate to the $10^-3$ outputs 3 terms needed to approximate $\pi$.  
+\question 1.3.6c \\
+rate of convergence for $\lim_{n \to \infty} \left( \sin{\frac{1}{n}} \right)^2$
+\[\left| \sin{\frac{1}{n}} - 0 \right| = \left| \sin\frac{1}{n} \right| \leq \frac{1}{n} \implies \left| \left( \sin{\frac{1}{n}}\right)^2 \right| \leq \frac{1}{n^2}\]
+therefore \[\left|P_n - P\right| < k * |\beta_n| \implies \left| \left( \sin{\frac{1}{n}}\right)^2 \right| < k *\frac{1}{n^2}\]
+Therefore, the sequence converges to $0$ with rate $O(\frac{1}{n^2})$
+\question 1.3.9
+\begin{parts}
+    \part if $F(h) = L + O(h^p)$ there $\exists k > 0$ s.t.:
+    \[ F(h) - L \leq kh^p\]
+    for a small enough $h > 0$, if $ 0 < q < p$ and $ 0 < h < 1$ then $h^q > h^p \implies kh^q >  kh^p$. Therefore 
+    \[\left| F(h) - L \right| \leq kh^q \text{  and  } F(h) = L + O(h^q)\]
+    \part
+    \begin{tabular}{c|c|c|c|c}
+        n & $h$ & $h^2$ & $h^3$ & $h^4$\\
+        0.5 & 0.5 & 0.25 & 0.125 & 0.0625 \\ 
+        0.1 & 0.1 & 0.01 & 0.001 & 0.0001 \\
+        0.01 & 0.01& 0.0001 & $1 \times 10^-6 $ & $1 \times 10 ^-8$\\
+        0.001 & 0.001 & $1\times 10^-6$ & $1\times 10^-9 $& $1\times10^-12$
+    \end{tabular}
+    The lowest rate of convergence is $O(h)$ and the highest rate of convergence is $O(h^4)$. For a given $h^n$ as $n \to \infty$ the rate of convergence increases.
+\end{parts}
+\question 1.3.11
+since $\lim_{x \to \infty} x_n = \lim_{x \to \infty} x_{n+1} = x$ and $ x_{n + 1} = 1 + \frac{1}{x_n}$, we can write
+\[x = 1 + 1/x \implies x^2 - x - 1 = 0 \implies x = \frac{1}{2} \left( 1  +\sqrt{5} \right)\]
+\question1.3.15
+\begin{parts}
+    \part 
+    There is a multiplication at each inner step at the process. This means there are $1 + 2 + 3 + \ldots + n$ multiplications which occur. This is equivalent to $\frac{n*\left(n + 1\right)}{2}$
+    The number of additions is similar, however, to calculate the first term you don't need to do addition but you do need to do multiplication, meaning there is one less addition step at each of the inner steps, however, there is an additional addition step at each of the outer steps to make up for it. Except for the first outer step. Therefore, the total number of additions is $\frac{\left(n+2\right) \left(n-1\right)}{2}$ 
+    \part 
+    Change the form to be: 
+    \[\sum_{i = 1}^{n} a_i * \left(\sum_{j = 1}^{i} b_j\right)\]
+    This results in the same number of additions, however it reduces the amount of multiplications to one for ever step of the outer summation or $n$ multiplications.
+\end{parts}
+\question 2.1.12a 
+\question 2.1.15 
+\question 2.1.17 
+\question 2.1.20 
+\end{questions}
+\end{document}
