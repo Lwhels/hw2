@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.11.7)  23 JAN 2024 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.11.7)  25 JAN 2024 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -852,6 +852,18 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {/Users/wheeler/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}] [2]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 142.
+ (/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `texttrademark ' is missing
+(microtype)             in font `TS1/lmtt/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+ [3] [4]
 This exam contains 9 questions with 4 parts, 0 subparts, and 0 subsubparts.
 (homework2.aux)
  ***********
@@ -860,17 +872,17 @@ L3 programming layer <2023-11-01>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 22626 strings out of 476526
- 425827 string characters out of 5795261
- 2007530 words of memory out of 5000000
- 44138 multiletter control sequences out of 15000+600000
- 588437 words of font info for 81 fonts, out of 8000000 for 9000
+ 22702 strings out of 476526
+ 426941 string characters out of 5795261
+ 2175530 words of memory out of 5000000
+ 44192 multiletter control sequences out of 15000+600000
+ 589489 words of font info for 91 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 102i,10n,120p,1050b,1423s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}</Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi6.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb>
-Output written on homework2.pdf (2 pages, 190767 bytes).
+ 102i,11n,120p,1050b,1996s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}</Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi6.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy6.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/wheeler/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb>
+Output written on homework2.pdf (4 pages, 211096 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16909 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 17421 words of extra memory for PDF output out of 20736 (max. 10000000)
 

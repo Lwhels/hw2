@@ -109,8 +109,77 @@ since $\lim_{x \to \infty} x_n = \lim_{x \to \infty} x_{n+1} = x$ and $ x_{n + 1
     This results in the same number of additions, however it reduces the amount of multiplications to one for ever step of the outer summation or $n$ multiplications.
 \end{parts}
 \question 2.1.12a 
+\[\ f(2.5) =  232.5586, f(-1.5) = -10.2539, frac{2.5 - 1.5}{2} = 0.5 \text{ and  } f(0.5) = 0.5273\]
+Therefore the next iteration will be on $[-1.5, 0.5]$
+\[\ f(0.5) =  0.5273, f(-1.5) = -10.2539, frac{0.5 - 1.5}{2} = -0.5 \text{ and  } f(-0.5) = -1.5820\]
+Therefore the next iteration will be on $[-0.5, 0.5]$. The algorithm will then converge at the root $x =0$.
 \question 2.1.15 
+Running the following code for the bisection method on the function provided on the interval $[0,1]$ since the water level will be between 0 and the radius r, with a tolerance $\epsilon$ that is arbitrarily small, and a maximum number of iterations is 7 as  since $|p_n - p| < \frac{a - b}{2^n} \implies |p_n - p| < \frac{1}{2^n} \implies 0.01 < \frac{1}{2^n} \implies 2^-7 < 0.01 < 2^-6 \implies n = 7$. 
+\begin{lstlisting}[style=Matlab-editor]
+function [x] = bisection(a, b, tol, NO)
+    j = 1;
+    FA = 10/12.4 * (0.5*pi - asin(a) - (a*sqrt(1-a^2))) - 1;
+    FB = 10/12.4 * (0.5*pi - asin(b) - (b*sqrt(1-b^2))) - 1;
+if (FA*FB > 0)
+    return
+end
+while j < NO
+    p = a + (b-a)/2; % better way for writing p = (a+b)/2
+    FP = 10/12.4 * (0.5*pi - asin(p) - (p*sqrt(1-p^2))) - 1; % evaluate the function at p
+    if abs(FP) < tol
+% close enough to actual root, stop iteration
+       break;
+    elseif (FA*FP) > 0
+% continue search in right half interval
+        a = p;
+    else
+% continue search in left half interval
+       b = p;
+    end
+j = j + 1;
+end
+x = p;
+fprintf('Iteration number = %d \n', j);
+fprintf('p = %.4f \n',p);
+fprintf('F(p) = %.4f \n', 10/12.4 * (0.5*pi - asin(p) - (p*sqrt(1-p^2))) -1);
+\end{lstlisting}
+On the 7th iteration the algorithm outputs $h = 0.1719 \implies depth = r - h = 1 - 0.1719 = 0.8281$ and since $ p = 0.8338 \implies |p_n - p| = |0.8281 - 0.8338| = 0.0057 < 0.01$ 
+
 \question 2.1.17 
+$|p_n - p| < \frac{a - b}{2^n} \implies |p_n - p| < \frac{1}{2^n}$ since the interval is from 1 to 2. Therefore, we know that the error will be less than $2^{-n}$. Since $\log_2(10^4) \approx 13.29 \implies 2^{-14} < 10^-4 < 2^{-13}$ or the bound of number of iterations is $n \geq 14$. 
+\begin{lstlisting}[style=Matlab-editor]
+   
+    function [x] = bisection(a, b, tol, NO)
+        j = 1;
+        FA = 10/12.4 * (0.5*pi - asin(a) - (a*sqrt(1-a^2))) - 1;
+        FB = 10/12.4 * (0.5*pi - asin(b) - (b*sqrt(1-b^2))) - 1;
+    if (FA*FB > 0)
+        return
+    end
+    while j < NO
+        p = a + (b-a)/2; % better way for writing p = (a+b)/2
+        FP = 10/12.4 * (0.5*pi - asin(p) - (p*sqrt(1-p^2))) - 1; % evaluate the function at p
+        if abs(FP) < tol
+    % close enough to actual root, stop iteration
+           break;
+        elseif (FA*FP) > 0
+    % continue search in right half interval
+            a = p;
+        else
+    % continue search in left half interval
+           b = p;
+        end
+    j = j + 1;
+    end
+    x = p;
+    fprintf('Iteration number = %d \n', j);
+    fprintf('p = %.4f \n',p);
+    fprintf('F(p) = %.4f \n', 10/12.4 * (0.5*pi - asin(p) - (p*sqrt(1-p^2))) -1);
+
+\end{lstlisting}
+by the code above the $p_{14} = 1.3248 $ 
 \question 2.1.20 
+$f\left(x\right) = \left({x-1}\right)^{10}, p_n = 1 + \frac{1}{n}$. When $n > 1, f(p_n) = f( 1 + 1/n) = \left(1 - 1 + 1/n\right)^{10} = n^{-10}$. Since $n > 1$ the smallest $|f(p_n)|$ can be is $2^{-10} < 10^{-3}$\\
+Conversely, $|p - p_n| = |1 - 1 + 1/n| = |1/n|$. This value: $|1/n| < 10^{-3} \implies n > \frac{1}{10^{-3}} = 1000$ 
 \end{questions}
 \end{document}
